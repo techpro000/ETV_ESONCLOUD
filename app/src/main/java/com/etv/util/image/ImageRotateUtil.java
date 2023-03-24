@@ -4,14 +4,11 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Matrix;
-import android.util.Log;
 
 import com.etv.http.util.BitmapWriteLocalRunnable;
 import com.etv.listener.WriteBitmapToLocalListener;
 import com.etv.service.EtvService;
-import com.etv.util.MyLog;
 import com.etv.util.RootCmd;
-import com.etv.util.SharedPerManager;
 import com.etv.util.system.CpuModel;
 import com.etv.util.system.SystemManagerUtil;
 
