@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/SVN_SERVER/IPC/ETV_HUGZUNINHA/BaseViewModel/src/main/res/layout/dialog_edit_commit.xml" value="0.19791666666666666" />
+        <entry key="..\:/SVN_SERVER/IPC/ETV_HUGZUNINHA/app/src/main/res/drawable/rect_circle.xml" value="0.1325" />
+        <entry key="..\:/SVN_SERVER/IPC/ETV_HUGZUNINHA/app/src/main/res/layout/activity_play_task.xml" value="0.2328125" />
+        <entry key="..\:/SVN_SERVER/IPC/ETV_HUGZUNINHA/app/src/main/res/layout/activity_police_cache.xml" value="0.28020833333333334" />
+        <entry key="..\:/SVN_SERVER/IPC/ETV_HUGZUNINHA/app/src/main/res/layout/activity_setting_police.xml" value="0.36614583333333334" />
+        <entry key="..\:/SVN_SERVER/IPC/ETV_HUGZUNINHA/app/src/main/res/layout/activity_setting_system.xml" value="0.21875" />
+        <entry key="..\:/SVN_SERVER/IPC/ETV_HUGZUNINHA/app/src/main/res/layout/activity_splash_low.xml" value="0.2" />
+        <entry key="..\:/SVN_SERVER/IPC/ETV_HUGZUNINHA/app/src/main/res/layout/dialog_setting_menu.xml" value="0.25" />
+        <entry key="..\:/SVN_SERVER/IPC/ETV_HUGZUNINHA/app/src/main/res/layout/fragment_server_connect.xml" value="0.21875" />
+        <entry key="..\:/SVN_SERVER/IPC/ETV_HUGZUNINHA/app/src/main/res/layout/fragment_service.xml" value="0.33" />
+        <entry key="..\:/SVN_SERVER/IPC/ETV_HUGZUNINHA/app/src/main/res/layout/fragment_setting_sys.xml" value="0.21875" />
+        <entry key="..\:/SVN_SERVER/IPC/ETV_HUGZUNINHA/app/src/main/res/layout/view_video.xml" value="0.15364583333333334" />
+      </map>
+    </option>
+  </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
+  <component name="SvnBranchConfigurationManager">
+    <option name="myConfigurationMap">
+      <map>
+        <entry key="$PROJECT_DIR$">
+          <value>
+            <SvnBranchConfiguration>
+              <option name="trunkUrl" value="svn://139.9.202.29/repos/anhui-esoncloud/IPC/ETV_HUGZUNINHA" />
+            </SvnBranchConfiguration>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
