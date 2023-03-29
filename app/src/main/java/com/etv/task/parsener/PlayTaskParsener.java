@@ -1903,7 +1903,7 @@ public class PlayTaskParsener {
                         continue;
                     }
                     MyLog.playTask("=======添加view到集合====添加数据到View==" + genView.getClass().getName());
-                    if (coType.equals(AppInfo.VIEW_AUDIO)){
+                    if (coType.equals(AppInfo.VIEW_AUDIO)) {
                         view_abous.removeView(genView.getView());
                         continue;
                     }
