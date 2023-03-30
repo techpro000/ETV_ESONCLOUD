@@ -215,11 +215,11 @@ public class GuardianUtil {
             return;
         }
         boolean isApkInstall = APKUtil.ApkState(context, AppInfo.GUARDIAN_PACKAGE_NAME);
-        MyLog.guardian("守护进程是否安装: " + isApkInstall);
         RawSourceEntity rawSourceEntity = getResourceGuardianEntity();
         if (rawSourceEntity == null) {
             return;
         }
+        MyLog.guardian("守护进程是否安装: " + isApkInstall + " / " + rawSourceEntity);
         if (isApkInstall) {  //已经安装就去检查版本号
             checkGuardianAppVersion(rawSourceEntity);
         } else {   //没有安装，直接安装
@@ -282,22 +282,21 @@ public class GuardianUtil {
             lists.add(new RawSourceEntity(R.raw.guardian_44, 3359565, "4.4通用版本", 55));         //4.4 系统通用       0
             lists.add(new RawSourceEntity(R.raw.guardian_51, 1624725, "5.1通用版本", 43));         //5.0 系统通用       1
             lists.add(new RawSourceEntity(R.raw.guardian_71, 3384046, "7.0通用版本", 55));         // 7.1 系统通用       2
-//            lists.add(new RawSourceEntity(R.raw.guardian_71_nogpio, 3394983 , "7.0通用版本没有GPIO", 77));         // 7.1 系统通用       2
             lists.add(new RawSourceEntity(R.raw.guardian_gt_81, 1597440, "8.1高通通用版本", 43));   //高通8.1版本      3
-            lists.add(new RawSourceEntity(R.raw.guardian_lg, 1615652, "朗国主板", 43));            //朗国主板          4
-            lists.add(new RawSourceEntity(R.raw.guardian_a20, 1593887, "视美泰", 43));             //视美泰A20  4.2    5
+            lists.add(new RawSourceEntity(R.raw.guardian_3568, 1615652, "朗国主板", 43));            //朗国主板          4
+            lists.add(new RawSourceEntity(R.raw.guardian_3568, 1593887, "视美泰", 43));             //视美泰A20  4.2    5
             lists.add(new RawSourceEntity(R.raw.guardian_81, 3389505, "8.1通用版本", 48));         //8.1 PX30 系统通用         6
             lists.add(new RawSourceEntity(R.raw.guardian_91, 3366542, "9.0", 71));                //a88 9.0版本             7
             lists.add(new RawSourceEntity(R.raw.guardian_mlogic91, 3365824, "mlogic9.0", 47));    //MLOCIC_91              8
-            lists.add(new RawSourceEntity(R.raw.guardian_11, 3360451, "3568-android-11", 57));    //Android-11  3568       9
             String cpuModel = CpuModel.getMobileType();
-            MyLog.guardian("=====获取守护进程Raw id error==" + cpuModel);
+            MyLog.guardian("=====获取守护进程CpuModel==" + cpuModel);
+            if (cpuModel.contains(CpuModel.CPU_MODEL_3568_11)) {
+                // 3568
+                rawSourceEntity = new RawSourceEntity(R.raw.guardian_3568, 3394812, "3568-android-3568", 76);
+                return rawSourceEntity;
+            }
             if (cpuModel.contains(CpuModel.CPU_MODEL_MLOGIC)) {
                 rawSourceEntity = lists.get(8);
-            } else if (cpuModel.contains(CpuModel.CPU_MODEL_SMD) || cpuModel.contains(CpuModel.CPU_MODEL_MSM)) {
-                rawSourceEntity = lists.get(3);
-            } else if (cpuModel.contains(CpuModel.CPU_MODEL_AOSP)) {
-                rawSourceEntity = lists.get(4);
             } else if (cpuModel.contains(CpuModel.CPU_MODEL_WING)) {
                 rawSourceEntity = lists.get(5);
             } else if (cpuModel.contains(CpuModel.CPU_MODEL_PX30)) {
@@ -326,7 +325,7 @@ public class GuardianUtil {
                 }
             }
         } catch (Exception e) {
-            MyLog.guardian("=====获取守护进程Raw id error==" + e.toString());
+            MyLog.guardian("=====获取守护进程error==" + e.toString());
             e.printStackTrace();
         }
         return rawSourceEntity;

@@ -75,7 +75,6 @@ dependencies {
     //Socket通讯框架
     implementation 'org.java-websocket:Java-WebSocket:1.4.1'
     //网络请求框架
-    //implementation 'com.gitee.shotter:HttpUtil:1.0.9'
     implementation 'com.squareup.okhttp3:okhttp-urlconnection:3.2.0'
     //litepal 数据库
     implementation 'org.litepal.guolindev:core:3.2.1'
@@ -86,13 +85,10 @@ dependencies {
     //压缩包
     implementation files('libs/zip4j-1.3.1.jar')
     implementation 'androidx.multidex:multidex:2.0.0'
-    //implementation 'com.gitee.shotter:DoodleDemo:1.0.3'
     //加载Excel文件资源库
-    //implementation(name: 'smartTable', ext: 'aar')
     implementation 'com.github.huangyanbin:SmartChart:1.3.2'
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.31'
     //H5 浏览器内核
-//    implementation 'com.tencent.tbs.tbssdk:sdk:43939'
     implementation files('libs/tbs_sdk.jar')
     implementation project(path: ':BaseViewModel')
     //PDF文件加载依赖
@@ -107,6 +103,5 @@ dependencies {
     implementation 'com.tencent:mmkv:1.2.11'
     //腾讯im  sdk
     implementation 'com.tencent.imsdk:imsdk-plus:5.4.666'
-
     implementation 'com.gitee.shotter_admin:http-down-retorfit:1.1.9'
 }

@@ -236,19 +236,17 @@ public class GuardianActivity extends GuardianBaseActivity implements
 
 
     private void gotoGuardianApp() {
-        String packageName = "com.guardian";
-        boolean isInstall = APKUtil.ApkState(GuardianActivity.this, packageName);
-        MyLog.cdl("========守护进程安装状态====" + isInstall);
-        if (!isInstall) {
-            return;
+        try {
+            Intent intent = new Intent();
+            ComponentName cmp = new ComponentName("com.guardian", "com.guardian.ui.MainActivity");
+            intent.addCategory(Intent.CATEGORY_LAUNCHER);
+//            intent.addCategory(Intent.CATEGORY_DEFAULT);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.setComponent(cmp);
+            startActivity(intent);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        Intent intent = new Intent();
-        ComponentName cmp = new ComponentName("com.guardian", "com.guardian.ui.MainActivity");
-//        intent.addCategory(Intent.CATEGORY_LAUNCHER);
-        intent.addCategory(Intent.CATEGORY_DEFAULT);
-        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        intent.setComponent(cmp);
-        startActivity(intent);
     }
 
     @Override
