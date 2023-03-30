@@ -9,8 +9,8 @@ android {
         minSdkVersion 19
         targetSdkVersion 30
 
-        versionCode 305
-        versionName "V5.3.5.7"
+        versionCode 306
+        versionName "V5.3.5.8"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
@@ -18,7 +18,6 @@ android {
             abiFilters 'armeabi', 'armeabi-v7a'
         }
     }
-
 
     signingConfigs {
         release {
@@ -36,6 +35,18 @@ android {
             signingConfig signingConfigs.release
         }
     }
+
+    android.applicationVariants.all {
+        variant ->
+            variant.outputs.all {
+                if ('release' == variant.buildType.name) {
+                    outputFileName = "ETV_" + versionName + "_hznh.apk"
+                } else {
+                    outputFileName = "ETV_" + versionName + "_hznh_debug.apk"
+                }
+            }
+    }
+
 
     repositories {
         flatDir {
