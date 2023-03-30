@@ -61,7 +61,7 @@ public class PlayTaskTriggerParsener {
     TaskMudel taskModel;
     int currentSencenPosition = 0;
 
-    public PlayTaskTriggerParsener(Activity context, PlayTaskView playTaskView,int playPosition) {
+    public PlayTaskTriggerParsener(Activity context, PlayTaskView playTaskView, int playPosition) {
         this.context = context;
         this.playTaskView = playTaskView;
         taskModel = new TaskModelmpl();
@@ -289,7 +289,7 @@ public class PlayTaskTriggerParsener {
                     int fileType = FileMatch.fileMatch(fileUrl);
                     MyLog.playTask("====文档地址===" + fileUrl + " /fileType =  " + fileType);
                     MyLog.playTask("====文档地址===" + " /fileType =  " + fileType);
-                    generatorView = TaskDealUtil.getPdfShowView(context, fileType, cpEntity, leftPosition, topPosition, width, height, mediAddEntity);
+                    generatorView = TaskDealUtil.getPdfShowView(context, fileType, cpEntity, leftPosition, topPosition, width, height, mediAddEntity, docList);
                     if (generatorView != null) {
                         view_abous.addView(generatorView.getView(), generatorView.getLayoutParams());
                         generatorView.updateView(mediAddEntity, true);
@@ -625,7 +625,7 @@ public class PlayTaskTriggerParsener {
      */
     private void setDefaultBackColor(String sencenType) {
         try {
-            GlideImageUtil.clearViewCache(iv_back_bgg);
+            GlideImageUtil.clearViewCache(context, iv_back_bgg);
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -197,7 +197,7 @@ public class DifferentDislay extends Presentation {
      */
     private void setDefaultBackColor(String sencenType) {
         try {
-            GlideImageUtil.clearViewCache(iv_back_bgg);
+            GlideImageUtil.clearViewCache(context, iv_back_bgg);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -317,7 +317,7 @@ public class DifferentDislay extends Presentation {
                     String fileUrl = mediAddEntity.getUrl();
                     int fileType = FileMatch.fileMatch(fileUrl);
                     MyLog.diff("====文档地址===" + fileUrl);
-                    generatorView = TaskDealUtil.getPdfShowView(context, fileType, cpEntity, leftPosition, topPosition, width, height, mediAddEntity);
+                    generatorView = TaskDealUtil.getPdfShowView(context, fileType, cpEntity, leftPosition, topPosition, width, height, mediAddEntity, docList);
                     if (generatorView != null) {
                         view_abous.addView(generatorView.getView(), generatorView.getLayoutParams());
                         generatorView.updateView(mediAddEntity, true);

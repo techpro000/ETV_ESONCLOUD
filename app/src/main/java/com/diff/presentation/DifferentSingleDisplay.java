@@ -171,7 +171,7 @@ public class DifferentSingleDisplay extends Presentation {
                 }
                 String fileUrl = mediAddEntity.getUrl();
                 int fileType = FileMatch.fileMatch(fileUrl);
-                generatorView = TaskDealUtil.getPdfShowView(context, fileType, null, leftPosition, topPosition, width, height, mediAddEntity);
+                generatorView = TaskDealUtil.getPdfShowView(context, fileType, null, leftPosition, topPosition, width, height, mediAddEntity, list_doc);
                 if (generatorView == null) {
                     return;
                 }

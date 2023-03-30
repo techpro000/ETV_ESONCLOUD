@@ -617,11 +617,13 @@ public class PlayTaskParsener {
             if (mediAddEntity == null) {
                 return;
             }
+            List<MediAddEntity> mediAddEntityList = new ArrayList<>();
+            mediAddEntityList.add(mediAddEntity);
             String fileUrl = mediAddEntity.getUrl();
             String deaution = mediAddEntity.getPlayParam();
             MyLog.playTask("文档得切换时间 ： " + deaution);
             int fileType = FileMatch.fileMatch(fileUrl);
-            generatorView = TaskDealUtil.getPdfShowView(context, fileType, null, leftPosition, topPosition, width, height, mediAddEntity);
+            generatorView = TaskDealUtil.getPdfShowView(context, fileType, null, leftPosition, topPosition, width, height, mediAddEntity, mediAddEntityList);
             view_abous.addView(generatorView.getView(), generatorView.getLayoutParams());
             generatorView.updateView(mediAddEntity, true);
             addViewToList(generatorView, AppInfo.VIEW_DOC, false);
@@ -778,7 +780,7 @@ public class PlayTaskParsener {
                     int fileType = FileMatch.fileMatch(fileUrl);
                     MyLog.playTask("====文档地址===" + fileUrl + " /fileType =  " + fileType);
                     MyLog.playTask("====文档地址===" + " /fileType =  " + fileType);
-                    generatorView = TaskDealUtil.getPdfShowView(context, fileType, cpEntity, leftPosition, topPosition, width, height, mediAddEntity);
+                    generatorView = TaskDealUtil.getPdfShowView(context, fileType, cpEntity, leftPosition, topPosition, width, height, mediAddEntity, docList);
                     if (generatorView != null) {
                         view_abous.addView(generatorView.getView(), generatorView.getLayoutParams());
                         generatorView.updateView(mediAddEntity, true);

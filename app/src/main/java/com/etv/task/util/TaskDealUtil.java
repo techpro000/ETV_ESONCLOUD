@@ -95,10 +95,10 @@ public class TaskDealUtil {
     }
 
     public static Generator getPdfShowView(Context context, int fileType, CpListEntity cpEntity, int leftPosition, int topPosition,
-                                           int width, int height, MediAddEntity mediAddEntity) {
+                                           int width, int height, MediAddEntity mediAddEntity, List<MediAddEntity> mixtureList) {
         Generator generatorView;
         if (fileType == FileEntity.STYLE_FILE_PDF) {
-            generatorView = new ViewPdfNewGenerateView(context, cpEntity, leftPosition, topPosition, width, height, mediAddEntity);
+            generatorView = new ViewPdfNewGenerateView(context, cpEntity, leftPosition, topPosition, width, height, mixtureList);
             return generatorView;
         }
         // EXCEL文件
