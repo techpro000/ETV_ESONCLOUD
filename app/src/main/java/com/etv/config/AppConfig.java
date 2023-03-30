@@ -10,10 +10,10 @@ public class AppConfig {
     //用来检测当前开机时间是否是正常得时间
     public static long TIME_CHECK_POWER_REDUCE = 20220505101010L;
 
-    public static final int APP_TYPE_DEFAULT = 5;                        //深圳皇尊年华
+    public static final int APP_TYPE_DEFAULT = 5;                          //深圳皇尊年华
     public static final int APP_TYPE_SHANXI = 5008;                        //皇尊年华的陕西客户-zhongbaizhihui
     public static final int APP_TYPE_POWERONOFF = 5009;                    //单机模式-默认定时开关及
-    public static final int APP_TYPE_U_INPUT= 5010;                              //单机模式-U盘导入节目需要密码
+    public static final int APP_TYPE_U_INPUT = 5010;                       //单机模式-U盘导入节目需要密码
     public static final int APP_TYPE = APP_TYPE_DEFAULT;
 
     public static final int SHOW_DEFAULT_SIZE = 0;                     //深圳皇尊年华-原始比例

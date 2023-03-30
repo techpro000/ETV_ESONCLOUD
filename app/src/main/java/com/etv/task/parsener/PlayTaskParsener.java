@@ -357,6 +357,7 @@ public class PlayTaskParsener {
                     Generator generator = cacheMemory.getGenerator();
                     if (cpType.contains(AppInfo.VIEW_LOGO)) {
                         genratorViewList.remove(cacheMemory);
+                        view_abous.removeView(generator.getView());
                         generator.clearMemory();
                         loadLogoImage();
                     }
