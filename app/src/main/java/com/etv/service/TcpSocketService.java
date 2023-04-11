@@ -598,11 +598,6 @@ public class TcpSocketService extends Service implements SocketStatuesListener {
             sendBroadToUi(AppInfo.SOCKET_LINE_STATUS_CHANGE, SocketWebListener.SOCKET_ERROR, "Failed : " + errorDesc, null);
             return;
         }
-//        AppConfig.isOnline = true;
-//        sendBroadToUi(AppInfo.SOCKET_LINE_STATUS_CHANGE, SocketWebListener.SOCKET_OPEN, "Success : ", null);
-//        handler.sendEmptyMessage(MESSAGE_GET_ALL_DEV_SET_INFO);
-//        handler.sendEmptyMessageDelayed(SOCKET_LINE_SUCCESS_UPDATE_TASK_INFO, 10 * 1000);
-
         AppConfig.isOnline = true;
         sendBroadToUi(AppInfo.SOCKET_LINE_STATUS_CHANGE, SocketWebListener.SOCKET_OPEN, "Server Line Success", null);
         handler.sendEmptyMessage(CHECK_POWER_ON_OFF);  //去更新定时开关机

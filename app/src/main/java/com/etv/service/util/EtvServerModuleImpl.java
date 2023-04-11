@@ -77,10 +77,6 @@ public class EtvServerModuleImpl implements EtvServerModule {
         if (workModel == AppInfo.WORK_MODEL_SINGLE) {
             return;
         }
-        if (!AppConfig.isOnline) {
-            taskServiceView.getDevInfoFromWeb(false, "Device Is Not Onlilne !");
-            return;
-        }
         String devId = CodeUtil.getUniquePsuedoID();
         String requestUrl = ApiInfo.QUERY_DEV_INFO();
         OkHttpUtils
@@ -186,9 +182,6 @@ public class EtvServerModuleImpl implements EtvServerModule {
         try {
             int workModel = SharedPerManager.getWorkModel();
             if (workModel != AppInfo.WORK_MODEL_NET) { //非网络模式
-                return;
-            }
-            if (!AppConfig.isOnline) {
                 return;
             }
             if (!NetWorkUtils.isNetworkConnected(context)) { //网络未连接
@@ -445,10 +438,6 @@ public class EtvServerModuleImpl implements EtvServerModule {
     public void updateProgressDownTask(String taskId, String titalDoanNum, int progress, String state, int downKb, String type) {
         try {
             if (taskId == null || taskId.length() < 2) {
-                return;
-            }
-            if (!AppConfig.isOnline) {
-                MyLog.update("设备未链接，中止更新进度");
                 return;
             }
             String requestUrl = ApiInfo.UPDATE_DOWN_PROGRESS();

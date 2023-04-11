@@ -8,8 +8,6 @@ import com.etv.util.FileUtil;
 import com.etv.util.SharedPerManager;
 import com.etv.util.system.CpuModel;
 
-import org.apache.xmlbeans.impl.xb.ltgfmt.Code;
-import org.json.JSONObject;
 
 public class AppInfo {
 

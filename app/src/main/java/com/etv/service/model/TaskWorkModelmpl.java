@@ -248,9 +248,6 @@ public class TaskWorkModelmpl implements TaskWorkModel {
      * 上传移动流量使用数据
      */
     private void uploadFlowUage() {
-        if (!AppConfig.isOnline) {
-            return;
-        }
         int currentTime = SimpleDateUtil.getHourMin();
         if (currentTime % 15 != 0) {
             MyLog.e("traff", "=========15分钟内限制提交一次=====");

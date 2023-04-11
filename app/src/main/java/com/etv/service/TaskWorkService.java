@@ -656,17 +656,15 @@ public class TaskWorkService extends Service implements TaskView {
             downTaskListOneByOne();
             return;
         }
-        if (TextUtils.isEmpty(ApiInfo.getFileDownUrl() )){
+        if (TextUtils.isEmpty(ApiInfo.getFileDownUrl())) {
             startPlayTaskActivity("========下载地址null 跳出循环");
             return;
 
         }
 
 
-
-
         String downUrlCache = entity.getDownPath();
-        MyLog.task("2222=="+downUrlCache);
+        MyLog.task("2222==" + downUrlCache);
         if (!TextUtils.isEmpty(downUrlCache) && downUrlCache.contains("\\")) {
             downUrlCache = downUrlCache.replace("\\", "/");
         }
@@ -787,12 +785,6 @@ public class TaskWorkService extends Service implements TaskView {
      */
     private void jujleDownFileLengthToWeb(String tag, String taskId) {
         try {
-            if (!AppConfig.isOnline) {
-                //设备不在线，中止更新进度
-                showDownProgressPop(false, "", "====000");
-                MyLog.down("====设备不在线，中止操作====");
-                return;
-            }
             long hasdownFileLength = 1;  //已经下载的容量
             long taskFileAllLength = 1;  //下载文件总内存
             if (downList == null || downList.size() < 1) {
@@ -1158,10 +1150,6 @@ public class TaskWorkService extends Service implements TaskView {
         int workModel = SharedPerManager.getWorkModel();
         if (workModel != AppInfo.WORK_MODEL_NET) {
             MyLog.phone("=====单机模式==不去检查");
-            return;
-        }
-        if (!AppConfig.isOnline) {
-            MyLog.phone("=====设备不在线，不上传");
             return;
         }
         initOther();
